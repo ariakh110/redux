@@ -1,10 +1,9 @@
-import jsonPlaceHolder from '../apis/jsonPlaceHolder'
+import jsonPlaceHolder from "../apis/jsonPlaceHolder";
 
-export const fetchPost = async () => {
-    // bad structcer avoid using this
-    const response = await jsonPlaceHolder.get('/posts');
-    return {
-       type: 'FETCH_POSTS',
-       payload: response.json(),
-    }
-}
+export const fetchPost = () => async (dispatch) => {
+  const response = await jsonPlaceHolder.get("/posts");
+  dispatch({
+    type: "FETCH_POSTS",
+    payload: response,
+  });
+};
