@@ -7,7 +7,7 @@ class PostList extends Component {
   }
 
   render() {
-    return <div>post list</div>;
+    return( <div>post list</div>);
   }
 }
 
