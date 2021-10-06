@@ -1,5 +1,6 @@
 import jsonPlaceHolder from '../apis/jsonPlaceHolder'
-export const fetchPost = () => {
+
+export const fetchPost = async () => {
     // bad structcer avoid using this
     const response = await jsonPlaceHolder.get('/posts');
     return {
