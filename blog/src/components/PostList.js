@@ -5,8 +5,6 @@ import UserHeader from "./UserHeader";
 
 class PostList extends Component {
   componentDidMount() {
-    console.log(this.props);
-
     this.props.fetchPost();
   }
   renderList() {
