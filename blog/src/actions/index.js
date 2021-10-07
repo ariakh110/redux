@@ -1,6 +1,5 @@
 import jsonPlaceHolder from "../apis/jsonPlaceHolder";
-import _ from 'lodash';
-
+import _ from "lodash";
 
 export const fetchPost = () => async (dispatch) => {
   const response = await jsonPlaceHolder.get("/posts");
@@ -19,8 +18,15 @@ const _fetchUser = _.memoize(async (id, dispatch) => {
   dispatch({ type: "FETCH_USER", payload: response.data });
 });
 
-export const fetchPostsAndUsers = () => async (dispatch,getState) => {
-      await dispatch(fetchPost());
-      const userIds = _.uniq(_.map(getState.posts,'userId'))
-      userIds.forEach(id=> dispatch(fetchUser( id )));
-}
+export const fetchPostsAndUsers = () => async (dispatch, getState) => {
+  await dispatch(fetchPost());
+  // const userIds = _.uniq(_.map(getState().posts,'userId'))
+  // userIds.forEach(id=> dispatch(fetchUser( id )));
+
+  // refactor: user lodash chain
+  _.chain(getState().posts)
+    .map("userId")
+    .uniq()
+    .forEach((id) => dispatch(fetchUser(id)))
+    .value();
+};
