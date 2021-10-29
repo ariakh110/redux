@@ -20,6 +20,7 @@ class StreamCreate extends Component {
         <form className="ui form">
           <Field name="title" component={this.renderInput} label="Title" />
           <Field name="description"component={this.renderInput}label="Description" />
+          <button className="button ui primary">submit</button>
         </form>
       </>
     );
