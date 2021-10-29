@@ -5,7 +5,7 @@ class StreamCreate extends Component {
     if (touched && error) {
       return (
         <div className="ui error message">
-           <p>{error}</p>
+          <p>{error}</p>
         </div>
       );
     }
@@ -14,13 +14,15 @@ class StreamCreate extends Component {
   renderInput = ({ input, label, meta }) => {
     console.log(meta);
     //can be {input} insted of formProps
-    const className =`field ${meta.touched && meta.error ? 'error' : ''}`;
+    const className = `field ${meta.touched && meta.error ? "error" : ""}`;
     return (
-      <div className={className}>
-        <label>{label}</label>
-        {/* then clear formProps -> {...input} */}
-        {/* <input {...formProps.input} /> */}
-        <input {...input} />
+      <div className="field">
+        <div className={className}>
+          <label>{label}</label>
+          {/* then clear formProps -> {...input} */}
+          {/* <input {...formProps.input} /> */}
+          <input {...input} />
+        </div>
         <div>{this.renderError(meta)}</div>
       </div>
     );
