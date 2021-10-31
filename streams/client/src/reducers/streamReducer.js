@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import {
   CREAT_STREAM,
   FETCH_STREAMS,
