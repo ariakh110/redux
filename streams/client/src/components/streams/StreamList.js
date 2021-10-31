@@ -11,7 +11,7 @@ class StreamList extends Component {
         return this.props.streams.map((stream)=>{
             return(
                 <div className="item" key={stream.id}>
-                    <i className="large middle aligned icon camera"/>
+                    <i className="large middle aligned icon live"/>
                     <div className="content">
                         {stream.title}
                         <div className="description">
