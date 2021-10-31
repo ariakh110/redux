@@ -1,3 +1,7 @@
 export const SIGN_IN = 'SIGN_IN';
 export const SIGN_OUT = 'SIGN_OUT';
-export const CREAT_STREAM = 'CREAT_STREAM';
+export const FETCH_STREAMS = 'FETCH_STREAMS';//LIST(INEDX)
+export const CREAT_STREAM = 'CREAT_STREAM';//CREATE 
+export const FETCH_STREAM = 'FETCH_STREAM';//SHOW (READ)
+export const EDIT_STREAM = 'EDIT_STREAM';//EDIT
+export const DELETE_STREAM = 'DELETE_STREAM';//DELETE
