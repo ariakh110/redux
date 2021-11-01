@@ -6,6 +6,12 @@ import StreamEdit from "./streams/StreamEdit";
 import StreamList from "./streams/StreamList";
 import StreamShow from "./streams/StreamShow";
 import history from '../history';
+/**
+ * with React router, each component 
+ * needs to be designed to work isolation
+ * fetch its own data !
+
+ */
 const App = () => {
   return (
     <div className="ui container">
