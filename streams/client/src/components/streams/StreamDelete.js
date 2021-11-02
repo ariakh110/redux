@@ -15,6 +15,7 @@ export default function StreamDelete() {
         title="Delete Stream"
         content="Are you sure you want to delete?"
         actions={actions}
+        onDismiss={() => history.push('/')}
       />
     </div>
   );
