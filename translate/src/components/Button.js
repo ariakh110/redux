@@ -6,7 +6,7 @@ class Button extends Component {
   //1.provider
   //static contextType = LanguageContext;
   renderSubmitText(value) {
-    return value === "en" ? "Submit" : "کلیک";
+    return value.language === "en" ? "Submit" : "کلیک";
   }
 
   renderSubmit = (color) => {
