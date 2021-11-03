@@ -6,10 +6,10 @@ class Button extends Component {
     static contextType = LanguageContext;
 
     render() {
-        console.log(this.context);
+        const text = this.context === 'en' ? 'Submit' : 'کلیک';
         return (
             <button className="ui button primary">
-                Submit
+                {text}
             </button>
         );
     }
