@@ -1,21 +1,30 @@
 import React, { Component } from "react";
+import ColorContext from "../contexts/ColorContext";
 import LanguageContext from "../contexts/LanguageContext";
 
 class Button extends Component {
   //1.provider
   //static contextType = LanguageContext;
-  renderSubmit(value) {
+  renderSubmitText(value) {
     return value === "en" ? "Submit" : "کلیک";
   }
+
+  renderSubmit = (color) => {
+    return (
+      <button className={`ui button ${color}`}>
+        <LanguageContext.Consumer>
+          {(value) => this.renderSubmitText(value)}
+        </LanguageContext.Consumer>
+      </button>
+    );
+  };
+
   render() {
     // const text = this.context === "en" ? "Submit" : "کلیک";
     return (
-      <button className="ui button primary">
-        {/* 2. consumers */}
-        <LanguageContext.Consumer>
-          {(value) => this.renderSubmit(value)}
-        </LanguageContext.Consumer>
-      </button>
+      <ColorContext.Consumer>
+        {(color) => this.renderSubmit(color)}
+      </ColorContext.Consumer>
     );
   }
 }
