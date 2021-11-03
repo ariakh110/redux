@@ -1,4 +1,4 @@
 import React from 'react'
 
-export default React.createContext('en');
+export default React.createContext('fa');
  
